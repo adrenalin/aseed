@@ -14,12 +14,12 @@ define ['angular', 'app'], (angular, app) ->
           templateUrl: 'app/partials/mainpage.html'
         navigation: navigationView
     
-    $stateProvider.state 'create',
-      url: '/create'
+    $stateProvider.state 'subpage',
+      url: '/:pageId'
       views:
         content:
-          templateUrl: 'app/partials/create.html'
-          controller: 'Create'
+          controller: 'Mainpage'
+          templateUrl: 'app/partials/mainpage.html'
         navigation: navigationView
     
     $urlRouterProvider.otherwise('/')

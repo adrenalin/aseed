@@ -3,6 +3,7 @@
   define([], function() {
     return [
       '$scope', '$rootScope', '$stateParams', function($scope, $rootScope, $stateParams) {
+        console.log('navigation controller with state parameters', $stateParams);
         if (typeof self.isLoggedIn === 'undefined') {
           self.isLoggedIn = true;
         }

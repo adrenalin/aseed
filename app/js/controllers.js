@@ -13,15 +13,6 @@
         });
       }
     ]);
-    module.controller('Create', [
-      '$scope', '$injector', function($scope, $injector) {
-        return require(['controllers/create'], function(create) {
-          return $injector.invoke(create, this, {
-            '$scope': $scope
-          });
-        });
-      }
-    ]);
     module.controller('Navigation', [
       '$scope', '$injector', function($scope, $injector) {
         return require(['controllers/navigation'], function(navigation) {
