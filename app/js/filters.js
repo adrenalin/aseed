@@ -3,7 +3,7 @@
   define(['angular', 'services'], function(angular, services) {
     'use strict';
     var module;
-    module = angular.module('products.filters', ['products.services']);
+    module = angular.module('newApp.filters', ['newApp.services']);
     return module.filter('interpolate', [
       'version', function(version) {
         return function(text) {

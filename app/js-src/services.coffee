@@ -1,4 +1,4 @@
 define ['angular'], (angular) ->
   'use strict'
-  module = angular.module('products.services', [])
+  module = angular.module('newApp.services', [])
   module.value('version', '0.1')

@@ -3,7 +3,7 @@
   define(['angular'], function(angular) {
     'use strict';
     var module;
-    module = angular.module('products.services', []);
+    module = angular.module('newApp.services', []);
     return module.value('version', '0.1');
   });
 

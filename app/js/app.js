@@ -3,7 +3,7 @@
   define(['angular', 'uiRouter', 'filters', 'services', 'directives', 'controllers', 'angularResource'], function(angular) {
     'use strict';
     var module;
-    module = angular.module('products', ['ngResource', 'products.controllers', 'products.filters', 'products.services', 'products.directives', 'ui.router']);
+    module = angular.module('newApp', ['ngResource', 'newApp.controllers', 'newApp.filters', 'newApp.services', 'newApp.directives', 'ui.router']);
     return module;
   });
 

@@ -1,7 +1,7 @@
 define ['angular', 'services'], (angular) ->
   'use strict'
 
-  module = angular.module 'products.controllers', ['products.services']
+  module = angular.module 'newApp.controllers', ['newApp.services']
   
   module.controller 'Mainpage', ['$scope', '$injector', ($scope, $injector) ->
     require ['controllers/mainpage'], (mainpage) ->

@@ -3,7 +3,7 @@
   define(['angular', 'services'], function(angular) {
     'use strict';
     var module;
-    module = angular.module('products.controllers', ['products.services']);
+    module = angular.module('newApp.controllers', ['newApp.services']);
     module.controller('Mainpage', [
       '$scope', '$injector', function($scope, $injector) {
         return require(['controllers/mainpage'], function(mainpage) {

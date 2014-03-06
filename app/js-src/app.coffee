@@ -9,12 +9,12 @@ define [
 ], (angular) ->
     'use strict'
     
-    module = angular.module('products', [
+    module = angular.module('newApp', [
       'ngResource'
-      'products.controllers'
-      'products.filters'
-      'products.services'
-      'products.directives'
+      'newApp.controllers'
+      'newApp.filters'
+      'newApp.services'
+      'newApp.directives'
       'ui.router'
     ])
     return module

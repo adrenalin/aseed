@@ -1,8 +1,9 @@
-define ['angular', 'services'], (angular, services) ->
+define ['angular', 'services', 'directives/template'], (angular, services, template) ->
   'use strict'
 
-  module = angular.module 'products.directives', ['products.services']
-  module.directive 'appVersion', ['version', (version) ->
-    return (scope, elm, attrs) ->
-      elm.text(version)
-  ]
+  module = angular.module 'newApp.directives', ['newApp.services']
+  
+  # Define template directive, which uses namespaces <apiTemplate /> and <object api-template />
+  module.directive 'apiTemplate', template
+  
+  return module
