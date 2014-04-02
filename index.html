@@ -6,21 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="fragment" content="!" />
-    <link rel="stylesheet" type="text/css" media="all" href="app/css/products.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/products.css" />
     
     <!-- !Favicons -->
-    <meta itemprop="image" content="./app/images/favicon-64x64.png" />
+    <meta itemprop="image" content="./images/favicon-64x64.png" />
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-    <link rel="icon" href="./app/images/favicon-64x64.png" type="image/png" />
-    <link rel="shortcut icon" href="./app/images/favicon-64x64.png" type="image/png" />
+    <link rel="icon" href="./images/favicon-64x64.png" type="image/png" />
+    <link rel="shortcut icon" href="./images/favicon-64x64.png" type="image/png" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="./favicon.ico" />
     
     <!-- !Login status, set as global -->
     <script type="text/javascript">self.isLoggedIn = false</script>
     
     <!--[if IE 8]>
-      <link rel="stylesheet" type="text/css" media="all" href="app/css/ie8.css" />
-      <script type="text/javascript src="app/js/json2.js"></script>
+      <link rel="stylesheet" type="text/css" media="all" href="css/ie8.css" />
+      <script type="text/javascript src="js/json2.js"></script>
     <![endif]-->
     <!--[if IE 9]>
       <script type="text/javascript">
@@ -40,9 +40,10 @@
         <div id="navigation" ui-view="navigation"></div>
       </div>
     </div>
+    <div id="messages" ui-view="messages"></div>
     <div id="container">
       <div class="width-wrapper" ui-view="content"></div>
     </div>
-    <script data-main="app/js/main" src="./bower_components/requirejs/require.js"></script>    
+    <script data-main="js/main" src="./bower_components/requirejs/require.js"></script>    
   </body>
 </html>

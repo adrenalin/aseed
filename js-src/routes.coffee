@@ -4,14 +4,14 @@ define ['angular', 'app'], (angular, app) ->
   return app.config ($stateProvider, $urlRouterProvider) ->
     navigationView =
       controller: 'Navigation'
-      templateUrl: 'app/partials/navigation.html'
+      templateUrl: 'partials/navigation.html'
     
     $stateProvider.state 'mainpage',
       url: '/'
       views:
         content:
           controller: 'Mainpage'
-          templateUrl: 'app/partials/mainpage.html'
+          templateUrl: 'partials/mainpage.html'
         navigation: navigationView
     
     $stateProvider.state 'subpage',
@@ -19,7 +19,7 @@ define ['angular', 'app'], (angular, app) ->
       views:
         content:
           controller: 'Mainpage'
-          templateUrl: 'app/partials/mainpage.html'
+          templateUrl: 'partials/mainpage.html'
         navigation: navigationView
     
     $urlRouterProvider.otherwise('/')

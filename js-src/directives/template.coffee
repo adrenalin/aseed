@@ -1,7 +1,7 @@
 define [], ->
   directive = ($http, $timeout) ->
     dir =
-      templateUrl: 'app/partials/directives/template.html'
+      templateUrl: 'partials/directives/template.html'
       restrict: 'EA'
       require: '^ngModel'
       scope:

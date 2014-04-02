@@ -3,13 +3,14 @@ window.name = "NG_DEFER_BOOTSTRAP!"
 
 require.config
   paths:
-    angular: '../../bower_components/angular/angular.min'
-    angularResource: '../../bower_components/angular-resource/angular-resource.min'
-    uiRouter: "../../bower_components/angular-ui-router/angular-ui-router.min"
-    angularMocks: '../../bower_components/angular-mocks/angular-mocks.min'
-    text: '../../bower_components/requirejs-text/text'
+    angular: '../bower_components/angular/angular.min'
+    angularResource: '../bower_components/angular-resource/angular-resource.min'
+    uiRouter: "../bower_components/angular-ui-router/angular-ui-router.min"
+    angularMocks: '../bower_components/angular-mocks/angular-mocks.min'
+    text: '../bower_components/requirejs-text/text'
+    jquery: 'lib/jquery-1.10.2.min.js'
   
-  baseUrl: 'app/js'
+  baseUrl: 'js'
   #urlArgs: 'ts=' + (new Date()).getTime()
   shim:
     angular:
