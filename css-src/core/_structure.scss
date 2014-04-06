@@ -19,19 +19,6 @@ body {
   margin: 0;
 }
 
-a {
-  &:link, &:visited {
-    text-decoration: none;
-  }
-  &:hover, &:visited:hover {
-    text-decoration: underline;
-  }
-  
-  img {
-    border: none;
-  }
-}
-
 .width-wrapper {
   width: 100%;
   max-width: $pageWidth;
