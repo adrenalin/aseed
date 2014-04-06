@@ -2,7 +2,7 @@
 
 This repository is for checking out a seed for any new AngularJS project.
 
-Base name is `newApp` for this application. `sed -i 's/newmyg' js-src/*.coffee` or `sed -i 's/newmyg' js/*.js` to change, depending on the wished language.
+Base name is `newApp` for this application. `sed -i 's/newApp/myApp/g' js-src/*.coffee` or `sed -i 's/newApp/myApp/g' js/*.js` to change, depending on the wished language.
 
 There are two state templates:
 
