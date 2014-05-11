@@ -1,0 +1,10 @@
+<ul>
+  <li ng-repeat="msg in messageStack" class="{{msg.status}}">
+    <div class="width-wrapper">
+      <div ng-bind="msg.message" class="message"></div>
+      <div ng-if="msg.status !== 'notice'">
+        <span class="close" ng-click="removeMessage(msg)">X</span>
+      </div>
+    </div>
+  </li>
+</ul>

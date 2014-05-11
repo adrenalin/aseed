@@ -8,6 +8,11 @@ define ['angular', 'services'], (angular) ->
       $injector.invoke mainpage, this, {'$scope': $scope}
     ]
   
+  module.controller 'Messages', ['$scope', '$injector', ($scope, $injector) ->
+    require ['controllers/messages'], (controller) ->
+      $injector.invoke controller, this, {'$scope': $scope}
+    ]
+
   module.controller 'Navigation', ['$scope', '$injector', ($scope, $injector) ->
     require ['controllers/navigation'], (navigation) ->
       $injector.invoke navigation, this, {'$scope': $scope}

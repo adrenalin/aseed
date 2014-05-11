@@ -5,6 +5,9 @@ define ['jquery'], ($) ->
     
     prevOffset = -1
     
+    if typeof self.messageStack is 'undefined'
+      self.messageStack = {}
+    
     # Display a message
     $scope.$on 'receiveMessage', (event, data) ->
       ts = (new Date()).getTime()
