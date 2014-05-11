@@ -31,7 +31,17 @@ define [], () ->
             formData[k] = @[k]
         
         return formData
-          
+    
+    typecast: (value, type) ->
+      # Typecasting
+      switch type
+        when 'Number'
+          if value then value = Number(value)
+        when 'String'
+          if value then value = String(value)
+        when 'Boolean'
+          value = !!(value)
+      return value
     
     setValues: (values = null) ->
       try
@@ -39,13 +49,25 @@ define [], () ->
           if v is null
             v = ''
           
-          key = v.toString().split(':')
+          # Set default value if available
+          if typeof v.default isnt 'undefined'
+            def = v.default
+          else
+            def = null
+          
+          # Backwards compatibility with shorthands
+          if typeof v.type isnt 'undefined'
+            type = v.type
+          else
+            type = v
+          
+          key = type.toString().split(':')
           
           if typeof values[k] is 'undefined'
             if key[0] is 'Array'
               values[k] = []
             else
-              values[k] = null
+              values[k] = def
           
           if key[0] is 'Array'
             @[k] = []
@@ -57,13 +79,13 @@ define [], () ->
                 obj = new @_namespace[className](value)
                 @[k].push obj
             else
-              @[k] = values[k]
+              @[k] = @typecast values[k], key[1]
           else if key[0] is 'Object'
             className = key[1]
             value = values[k]
             @[k] = new @_namespace[className](value)
           else
-            @[k] = values[k]
+            @[k] = @typecast values[k], key[0]
       catch error
         console.error error.toString()
     
