@@ -6,6 +6,10 @@ define ['angular', 'app'], (angular, app) ->
       controller: 'Navigation'
       templateUrl: 'partials/navigation.html'
     
+    messageView =
+      controller: 'Messages'
+      templateUrl: 'partials/messages.html'
+    
     $stateProvider.state 'mainpage',
       url: '/'
       views:
