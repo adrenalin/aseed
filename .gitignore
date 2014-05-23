@@ -1,5 +1,6 @@
 js/*
-!js/lib
+!js/lib/json2.js
+!js/lib/jquery.timers.js
 .sass-cache
 .DS_Store
 css/template.css
