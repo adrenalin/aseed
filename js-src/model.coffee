@@ -1,5 +1,5 @@
 define [], () ->
-  class Basemodel
+  class Model
     _fields:
       id: null
     
@@ -76,7 +76,11 @@ define [], () ->
               
               for i in [0...values[k].length]
                 value = values[k][i]
-                obj = new @_namespace[className](value)
+                
+                if typeof window[className] isnt 'undefined'
+                  obj = new window[className]
+                else if typeof @_namespace[className] isnt 'undefined'
+                  obj = new @_namespace[className](value)
                 @[k].push obj
             else
               @[k] = @typecast values[k], key[1]
