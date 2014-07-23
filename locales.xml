@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locales>
+  <locale id="setDimensions">
+    <en>Set dimensions</en>
+    <fi>Aseta mitat</fi>
+    <hu>Állítsa be a méretet</hu>
+  </locale>
+</locales>
