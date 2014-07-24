@@ -2,7 +2,6 @@ define ['angular', 'services', 'l10n'], (angular, services, l10n) ->
   'use strict'
 
   module = angular.module 'newApp.controllers', ['newApp.services']
-  l10n = new L10n;
   
   # Common rules for initializing a scope
   initScope = ($scope) ->
