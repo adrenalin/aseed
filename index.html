@@ -54,7 +54,8 @@
     <div id="header">
       <div class="width-wrapper clearfix">
         <a href="#!/" class="logo">
-          Logo
+          <!--[if IE 8]><img src="images/template-logo.png" alt="template" /><![endif]-->
+          <![if gt IE 8]><img src="images/template-logo.svg" alt="template" /><![endif]>
         </a>
         <div id="navigation" ui-view="navigation"></div>
       </div>
