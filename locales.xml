@@ -5,4 +5,5 @@
     <fi>Aseta mitat</fi>
     <hu>Állítsa be a méretet</hu>
   </locale>
+  <locale id="setDimensionsAlias" alias="setDimensions" />
 </locales>
