@@ -1,12 +1,10 @@
-define ['angular', 'services', 'l10n'], (angular, services, l10n) ->
+define ['angular', 'services'], (angular, services) ->
   'use strict'
 
   module = angular.module 'newApp.controllers', ['newApp.services']
   
   # Common rules for initializing a scope
   initScope = ($scope) ->
-    $scope.l10n = l10n;
-    $scope._ = l10n.get
     return $scope
   
   module.controller 'Mainpage', ['$scope', '$injector', ($scope, $injector) ->
