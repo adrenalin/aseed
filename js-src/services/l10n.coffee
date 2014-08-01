@@ -2,6 +2,25 @@ define ['text!../locales.xml', 'jquery'], (locales, $) ->
   class L10n
     locales: {}
     fallback: 'en'
+    addLocale: (str, lang, value) ->
+      if typeof @locales is 'undefined'
+        l = L10n.prototype.locales
+      else
+        l = @locales
+      
+      if typeof l[str] is 'undefined'
+        l[str] = {}
+      
+      l[str][lang] = value
+    
+    addLocales: (locales) ->
+      if typeof @locales is 'undefined'
+        l = L10n.prototype.locales
+      else
+        l = @locales
+      
+      l = $.extend({}, l, locales)
+    
     get: (str, lang) ->
       if typeof @locales is 'undefined'
         l = L10n.prototype.locales
@@ -30,13 +49,25 @@ define ['text!../locales.xml', 'jquery'], (locales, $) ->
         return str
       
       return l[str][lang]
-  
-    setLocales: (locales) ->
-      data = $($.parseXML(locales)).find('locale')
+    
+    addLocalesJSON: (json) ->
+      @addLocales(json)
+    
+    addLocalesXML: (locales) ->
+      l10nXML = $($.parseXML(locales))
+      data = l10nXML.find('locale')
       aliases = {}
       
+      namespace = l10nXML.find('locales').attr('namespace')
+      
+      if typeof namespace is 'undefined'
+        namespace = ''
+      else
+        namespace = namespace.toString().replace(/\.?$/, '.')
+        console.log 'append namespace', namespace
+      
       for i in [0...data.length]
-        id = data.eq(i).attr('id')
+        id = namespace + data.eq(i).attr('id')
         children = data.eq(i).find('> *')
         
         if alias = data.eq(i).attr('alias')
@@ -48,14 +79,14 @@ define ['text!../locales.xml', 'jquery'], (locales, $) ->
         for k in [0...children.length]
           lang = children.eq(k).get(0).tagName.toLowerCase()
           try
-            @locales[id][lang] = children.eq(k).html()
+            @addLocale(id, lang, children.eq(k).html())
           catch error
-            @locales[id][lang] = children.eq(k).text()
+            @addLocale(id, lang, children.eq(k).text())
       
       for alias, key of aliases
         if typeof @locales[key] isnt 'undefined'
           @locales[alias] = @locales[key]
   
   l10n = new L10n
-  l10n.setLocales(locales)
+  l10n.addLocalesXML(locales)
   return l10n
