@@ -1,0 +1,19 @@
+<div class="api-search">
+  <div class="search-wrapper" ng-class="{multiple: allowMultiple}">
+    <div ng-class="{hidden: !canHaveMore()}">
+      <input type="search" ng-keydown="$event.keyCode == 13 ? console.log('enter') : null" ng-model="apiSearchQuery" />
+    </div>
+    <ul ng-class="{hidden: !(apiSearchResults.length)}" class="results">
+      <li ng-repeat="v in apiSearchResults" ng-click="setValue(v)" ng-class="{selected: isOptionSelected(), noID: !v.id}">
+        <span ng-if="!v.id">
+          <span ng-bind="_('search.createNew')"></span>:
+        </span>
+        <span ng-bind="v.label" class="label"></span>
+      </li>
+    </ul>
+    <span class="value" ng-repeat="value in model">
+      <span ng-bind="value.label"></span>
+      <span class="remove" ng-click="removeOption(value.id)">X</span>
+    </span>
+  </div>
+</div>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<locales>
-  <locale id="setDimensions">
-    <en>Set dimensions</en>
-    <fi>Aseta mitat</fi>
-    <hu>Állítsa be a méretet</hu>
+<locales namespace="core">
+  <locale id="template">
+    <en>Template</en>
+    <fi>Template</fi>
   </locale>
-  <locale id="setDimensionsAlias" alias="setDimensions" />
+  <locale id="aliasTemplate" alias="template" />
 </locales>
