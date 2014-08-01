@@ -1,41 +1,61 @@
 define ['jquery'], ($) ->
   return ['$scope', '$rootScope', '$stateParams', '$timeout', ($scope, $rootScope, $stateParams, $timeout) ->
-    # Read to scope from global stack
-    $scope.messageStack = self.messageStack
+    # No full refresh on location change. Message center should be persistent
+    $rootScope.$on '$locationChangeSuccess', (e) ->
+      e.preventDefault()
+    
+    pageTitle = 'Template'
+    $rootScope.pageTitle = pageTitle
     
     prevOffset = -1
     
-    if typeof self.messageStack is 'undefined'
-      self.messageStack = {}
+    $scope.messageStack = {}
+      
+    # Clear a message with the given ID
+    $scope.$on 'removeMessage', (events, ids) ->
+      if !angular.isArray(ids)
+        ids = [ids]
+      
+      for i in [0...ids.length]
+        for k, v of $scope.messageStack
+          if v.id is ids[i]
+            $scope.removeMessage(v)
+    
+    # Remove all messages
+    $scope.$on 'removeMessages', ->
+      for k, v of $scope.messageStack
+        $scope.removeMessage(v)
     
     # Display a message
     $scope.$on 'receiveMessage', (event, data) ->
-      ts = (new Date()).getTime()
+      if typeof data.id is 'undefined'
+        data.id = (new Date()).getTime()
+      
       msg = 
-        id: ts
+        id: data.id
         message: data.message
         status: data.status
       
-      self.messageStack[ts] = msg
+      $scope.messageStack[data.id] = msg
         
       if data.status is 'notice'
         fn = ->
           $scope.removeMessage msg
         $timeout fn, 2000
-      
-      # Read from global variable
-      $scope.messageStack = self.messageStack
     
     $scope.removeMessage = (msg) ->
-      id = msg.id
       msg.status = 'prepare-hide'
       
       fn = ->
-        delete self.messageStack[id]
-        $scope.messageStack = self.messageStack
+        delete $scope.messageStack[msg.id]
       
       $timeout fn, 1000
     
-    #$rootScope.$broadcast 'receiveMessage', {status: 'error', message: 'Lorem ipsum'}
+    # Set page title
+    $scope.$on 'setTitle', (event, title) ->
+      title.push pageTitle
+      
+      $rootScope.pageTitle = title.join(' | ')
+    
     $scope.$apply()
   ]
