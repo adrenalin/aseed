@@ -18,6 +18,10 @@
     "angular-ui-router.stateHelper": "~1.1.0",
     "requirejs": "~2.1.11",
     "requirejs-text": "~2.0.10",
-    "jquery": "~1.11.0"
+    "jquery": "~1.11.0",
+    "jquery-timers": "adrenalin/jquery-timers",
+    "aseed-service-queryparams": "adrenalin/aseed-service-queryparams",
+    "aseed-service-l10n": "adrenalin/aseed-service-l10n",
+    "aseed-model": "adrenalin/aseed-model"
   }
 }
