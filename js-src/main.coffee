@@ -12,7 +12,7 @@ require.config
     jquery: 'lib/jquery/dist/jquery.min'
     jqueryTimers: 'lib/jquery-timers/jquery.timers.min'
     model: 'lib/aseed-model/model'
-    l10n: 'lib/aseed-service-l10n'
+    l10n: 'lib/aseed-service-l10n/l10n'
     queryparams: 'lib/aseed-service-queryparams'
   
   baseUrl: 'js'
