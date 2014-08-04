@@ -19,6 +19,7 @@
     "requirejs": "~2.1.11",
     "requirejs-text": "~2.0.10",
     "jquery": "~1.11.0",
+    "json2": "adrenalin/json2",
     "jquery-timers": "adrenalin/jquery-timers",
     "aseed-service-queryparams": "adrenalin/aseed-service-queryparams",
     "aseed-service-l10n": "adrenalin/aseed-service-l10n",
