@@ -6,15 +6,17 @@ define [
   'directives'
   'controllers'
   'angularResource'
+  'angularSanitize',
 ], (angular) ->
-  'use strict'
-  
-  module = angular.module('newApp', [
-    'ngResource'
-    'newApp.controllers'
-    'newApp.filters'
-    'newApp.services'
-    'newApp.directives'
-    'ui.router'
-  ])
-  return module
+    'use strict'
+    
+    module = angular.module('newApp', [
+      'ngResource'
+      'ngSanitize'
+      'newApp.controllers'
+      'newApp.filters'
+      'newApp.services'
+      'newApp.directives'
+      'ui.router'
+    ])
+    return module
