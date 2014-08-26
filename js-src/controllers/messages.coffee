@@ -7,8 +7,6 @@ define ['jquery'], ($) ->
     pageTitle = 'Template'
     $rootScope.pageTitle = pageTitle
     
-    prevOffset = -1
-    
     $scope.messageStack = {}
       
     # Clear a message with the given ID
