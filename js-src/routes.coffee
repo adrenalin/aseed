@@ -1,7 +1,9 @@
 define ['angular', 'app'], (angular, app) ->
   'use strict'
 
-  return app.config ($stateProvider, $urlRouterProvider) ->
+  return app.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
+    $locationProvider.hashPrefix('!')
+    
     defaultControllers =
       navigation:
         controller: 'Navigation'
