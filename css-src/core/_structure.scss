@@ -113,3 +113,18 @@ body {
     display: none !important;
   }
 }
+
+.row {
+  @include clearfix();
+  
+  & > * {
+    display: block;
+    float: left;
+  }
+}
+
+@for $i from 1 through $cols {
+  .span#{$i} {
+    width: 100% * $i / $cols;
+  }
+}

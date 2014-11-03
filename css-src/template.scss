@@ -2,7 +2,8 @@
 @import "core/mixins";
 @import "core/structure";
 @import "core/typography";
-@import "core/header";
-@import "core/footer";
-@import "core/content";
-@import "core/admin";
+
+@import "contexts/header";
+@import "contexts/footer";
+@import "contexts/content";
+@import "contexts/admin";
