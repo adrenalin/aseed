@@ -7,17 +7,17 @@ define ['angular', 'services'], (angular, services) ->
   initScope = ($scope) ->
     return $scope
   
-  module.controller 'Mainpage', ['$scope', '$injector', ($scope, $injector) ->
+  module.controller 'mainpage', ['$scope', '$injector', ($scope, $injector) ->
     require ['controllers/mainpage'], (controller) ->
       $injector.invoke controller, this, {'$scope': initScope($scope)}
     ]
   
-  module.controller 'Messages', ['$scope', '$injector', ($scope, $injector) ->
+  module.controller 'messages', ['$scope', '$injector', ($scope, $injector) ->
     require ['controllers/messages'], (controller) ->
       $injector.invoke controller, this, {'$scope': initScope($scope)}
     ]
 
-  module.controller 'Navigation', ['$scope', '$injector', ($scope, $injector) ->
+  module.controller 'navigation', ['$scope', '$injector', ($scope, $injector) ->
     require ['controllers/navigation'], (controller) ->
       $injector.invoke controller, this, {'$scope': initScope($scope)}
     ]

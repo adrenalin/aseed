@@ -6,20 +6,24 @@ define ['angular', 'app'], (angular, app) ->
     
     defaultControllers =
       navigation:
-        controller: 'Navigation'
+        controller: 'navigation'
         templateUrl: 'partials/navigation.html'
       messages:
-        controller: 'Messages'
+        controller: 'messages'
         templateUrl: 'partials/messages.html'
     
-    $stateProvider.state 'mainpage',
+    $stateProvider.state 'pages',
       url: '/'
+      abstract: true
+    
+    $stateProvider.state 'pages.mainpage',
+      url: ''
       views: angular.extend {}, defaultControllers,
         content:
-          controller: 'Mainpage'
+          controller: 'mainpage'
           templateUrl: 'partials/mainpage.html'
     
-    $stateProvider.state 'subpage',
+    $stateProvider.state 'pages.subpage',
       url: '/:pageId'
       views: angular.extend {}, defaultControllers,
         content:
