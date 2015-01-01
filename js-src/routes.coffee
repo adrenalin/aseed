@@ -15,19 +15,19 @@ define ['angular', 'app'], (angular, app) ->
     $stateProvider.state 'pages',
       url: '/'
       abstract: true
+      views: angular.extend {}, defaultControllers,
+        content:
+          controller: 'page'
+          templateUrl: 'partials/mainpage.html'
     
     $stateProvider.state 'pages.mainpage',
       url: ''
-      views: angular.extend {}, defaultControllers,
-        content:
-          controller: 'mainpage'
-          templateUrl: 'partials/mainpage.html'
     
     $stateProvider.state 'pages.subpage',
       url: '/:pageId'
       views: angular.extend {}, defaultControllers,
         content:
-          controller: 'Mainpage'
-          templateUrl: 'partials/mainpage.html'
+          controller: 'page'
+          templateUrl: 'partials/page.html'
     
     $urlRouterProvider.otherwise('/')
