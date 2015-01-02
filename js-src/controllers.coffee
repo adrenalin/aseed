@@ -7,8 +7,8 @@ define ['angular', 'services'], (angular, services) ->
   initScope = ($scope) ->
     return $scope
   
-  module.controller 'mainpage', ['$scope', '$injector', ($scope, $injector) ->
-    require ['controllers/mainpage'], (controller) ->
+  module.controller 'page', ['$scope', '$injector', ($scope, $injector) ->
+    require ['controllers/page'], (controller) ->
       $injector.invoke controller, this, {'$scope': initScope($scope)}
     ]
   

@@ -12,18 +12,22 @@ define ['angular', 'app'], (angular, app) ->
         controller: 'messages'
         templateUrl: 'partials/messages.html'
     
-    $stateProvider.state 'pages',
+    $stateProvider.state 'page',
       url: '/'
       abstract: true
       views: angular.extend {}, defaultControllers,
         content:
           controller: 'page'
-          templateUrl: 'partials/mainpage.html'
+          templateUrl: 'partials/page.html'
     
-    $stateProvider.state 'pages.mainpage',
+    $stateProvider.state 'page.mainpage',
       url: ''
+      views: angular.extend {}, defaultControllers,
+        content:
+          controller: 'page'
+          templateUrl: 'partials/page.html'
     
-    $stateProvider.state 'pages.subpage',
+    $stateProvider.state 'page.subpage',
       url: '/:pageId'
       views: angular.extend {}, defaultControllers,
         content:
